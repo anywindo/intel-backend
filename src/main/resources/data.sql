@@ -158,3 +158,61 @@ INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Su
 INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Mariko Watanabe', 'Staff Engineer', 'Manager Suzuki', 'mariko.watanabe@intel.com', '+81-555-0148');
 INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Alan Griffin', 'Engineer Level 3', 'Manager Smith', 'alan.griffin@intel.com', '+1-555-0149');
 INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rekha Bose', 'Senior Engineer', 'Manager Patel', 'rekha.bose@intel.com', '+91-555-0150');
+
+-- =============================================================================
+-- KASUS B: Product Hierarchy + Hardcoded Credentials
+-- Simulates Intel's product management system and exposed admin credentials
+-- =============================================================================
+
+-- Product hierarchy (root categories)
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Processors', 'PROC-ROOT', 'Processors', 'Launched', NULL, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Chipsets', 'CHIP-ROOT', 'Chipsets', 'Launched', NULL, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel NUC', 'NUC-ROOT', 'NUC', 'Launched', NULL, 'admin');
+
+-- Child products (under Processors, id=1)
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core i9-14900K', 'PROC-14900K', 'Processors', 'Launched', 1, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core i7-14700K', 'PROC-14700K', 'Processors', 'Launched', 1, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core Ultra 200S', 'PROC-ULTRA200', 'Processors', 'Announced', 1, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Xeon w9-3595X', 'XEON-3595X', 'Processors', 'Launched', 1, 'admin');
+
+-- Child products (under Chipsets, id=2)
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Z790', 'CHIP-Z790', 'Chipsets', 'Launched', 2, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel B760', 'CHIP-B760', 'Chipsets', 'Launched', 2, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel W790', 'CHIP-W790', 'Chipsets', 'Launched', 2, 'admin');
+
+-- Child products (under NUC, id=3)
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('NUC 13 Pro', 'NUC-13PRO', 'NUC', 'Launched', 3, 'admin');
+INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('NUC 14 Performance', 'NUC-14PERF', 'NUC', 'Announced', 3, 'admin');
+
+-- VULNERABILITY: Hardcoded admin credentials (in real breach, these were in JS source code)
+INSERT INTO ADMIN_CREDENTIAL (username, password, role, github_token, basic_auth) VALUES ('product-admin', 'IntelP@ssw0rd2024!', 'SPARK Product Management System Admin', 'ghp_1a2b3c4d5e6f7g8h9i0jklmnopqrstuv', 'Basic cHJvZHVjdC1hZG1pbjpJbnRlbFBAc3N3MHJkMjAyNCE=');
+INSERT INTO ADMIN_CREDENTIAL (username, password, role, github_token, basic_auth) VALUES ('hierarchy-viewer', 'ViewerPass123', 'viewer', NULL, 'Basic aGllcmFyY2h5LXZpZXdlcjpWaWV3ZXJQYXNzMTIz');
+
+-- =============================================================================
+-- KASUS C: SEIMS — Suppliers, NDAs, and Sessions
+-- Simulates supplier EHS IP management system with sequential IDs and broken JWT
+-- =============================================================================
+
+-- Supplier data (sequential IDs — vulnerable to enumeration)
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Taiwan Semiconductor Manufacturing', 'Wei-Lin Chang', 'wchang@tsmc.com', '+886-3-5636688', 'Taiwan', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Samsung Electronics', 'Min-Soo Park', 'mspark@samsung.com', '+82-2-2255-0114', 'South Korea', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('SK Hynix', 'Ji-Hoon Lee', 'jhlee@skhynix.com', '+82-2-3459-2114', 'South Korea', 'Pending');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Micron Technology', 'Robert Ellison', 'rellison@micron.com', '+1-208-368-4000', 'USA', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('ASE Group', 'Hsiao-Wen Liu', 'hwliu@aseglobal.com', '+886-2-8780-5489', 'Taiwan', 'Non-Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('GlobalFoundries', 'Ahmed Nassar', 'anassar@gf.com', '+1-518-305-7200', 'USA', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Infineon Technologies', 'Klaus Wagner', 'kwagner@infineon.com', '+49-89-234-0', 'Germany', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Nanya Technology', 'Yi-Chen Wu', 'ycwu@nanya.com', '+886-3-328-1688', 'Taiwan', 'Pending');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('United Microelectronics Corp', 'Cheng-Yu Tan', 'cytan@umc.com', '+886-3-578-2258', 'Taiwan', 'Compliant');
+INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Amkor Technology', 'Sujit Banerjee', 'sbanerjee@amkor.com', '+1-480-821-5000', 'USA', 'Compliant');
+
+-- Confidential NDAs (sensitive documents exposed in the real breach)
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (1, 'TSMC 3nm Process Node IP Agreement', '2023-01-15', '2028-01-15', 'Top Secret', '/docs/nda/tsmc-3nm-ip-2023.pdf');
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (1, 'TSMC CoWoS Packaging Agreement', '2023-06-01', '2026-06-01', 'Confidential', '/docs/nda/tsmc-cowos-2023.pdf');
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (2, 'Samsung HBM4 Supply Agreement', '2024-03-10', '2027-03-10', 'Top Secret', '/docs/nda/samsung-hbm4-2024.pdf');
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (3, 'SK Hynix DDR6 Development Partnership', '2024-01-20', '2029-01-20', 'Confidential', '/docs/nda/skhynix-ddr6-2024.pdf');
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (4, 'Micron CXL Memory Module Agreement', '2023-09-05', '2026-09-05', 'Confidential', '/docs/nda/micron-cxl-2023.pdf');
+INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (7, 'Infineon Power IC Specifications', '2024-02-14', '2027-02-14', 'Top Secret', '/docs/nda/infineon-power-2024.pdf');
+
+-- Session data (SHALLOW: no binding between token and user, no JWT validation)
+INSERT INTO USER_SESSION (user_id, token, ip_address, created_at, expires_at) VALUES ('user001', 'Not Autorized', '192.168.1.100', '2025-01-01 08:00:00', '2025-01-01 20:00:00');
+INSERT INTO USER_SESSION (user_id, token, ip_address, created_at, expires_at) VALUES ('user002', 'eyJhbGciOiJub25lIn0.eyJ1c2VyIjoiZmFrZSJ9.', '10.0.0.50', '2025-01-01 09:00:00', '2025-01-01 21:00:00');
