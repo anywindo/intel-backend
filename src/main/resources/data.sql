@@ -1,218 +1,46 @@
 -- =============================================================================
 -- Seed Data: Simulated Intel Global Employee Directory
--- Populates 151 dummy records to simulate the 270,000 leaked employee records
--- from the "Intel Outside" data breach.
 -- =============================================================================
 
--- The target of the original search (the security researcher)
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Eaton Zveare', 'Security Researcher', 'Jane Doe', 'eaton@intel.com', '+1-555-0000');
-
--- Global workforce dummy records
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Aditya Sharma', 'Engineer Level 1', 'Manager Patel', 'aditya.sharma@intel.com', '+91-555-0001');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Priya Nair', 'Engineer Level 2', 'Manager Patel', 'priya.nair@intel.com', '+91-555-0002');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('James Wilson', 'Senior Engineer', 'Manager Smith', 'james.wilson@intel.com', '+1-555-0003');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sarah Chen', 'Staff Engineer', 'Manager Li', 'sarah.chen@intel.com', '+1-555-0004');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Raj Patel', 'Principal Engineer', 'Manager Kumar', 'raj.patel@intel.com', '+91-555-0005');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Maria Garcia', 'Engineer Level 3', 'Manager Rodriguez', 'maria.garcia@intel.com', '+1-555-0006');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Wei Zhang', 'Senior Engineer', 'Manager Li', 'wei.zhang@intel.com', '+86-555-0007');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('John Anderson', 'Engineer Level 1', 'Manager Smith', 'john.anderson@intel.com', '+1-555-0008');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ananya Gupta', 'Engineer Level 2', 'Manager Kumar', 'ananya.gupta@intel.com', '+91-555-0009');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('David Kim', 'Staff Engineer', 'Manager Park', 'david.kim@intel.com', '+82-555-0010');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Elena Petrov', 'Engineer Level 3', 'Manager Ivanov', 'elena.petrov@intel.com', '+7-555-0011');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Michael Brown', 'Senior Engineer', 'Manager Smith', 'michael.brown@intel.com', '+1-555-0012');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Deepak Verma', 'Principal Engineer', 'Manager Patel', 'deepak.verma@intel.com', '+91-555-0013');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Lisa Wang', 'Engineer Level 1', 'Manager Li', 'lisa.wang@intel.com', '+86-555-0014');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Carlos Mendez', 'Engineer Level 2', 'Manager Rodriguez', 'carlos.mendez@intel.com', '+52-555-0015');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Yuki Tanaka', 'Staff Engineer', 'Manager Suzuki', 'yuki.tanaka@intel.com', '+81-555-0016');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Robert Taylor', 'Engineer Level 3', 'Manager Smith', 'robert.taylor@intel.com', '+1-555-0017');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sneha Reddy', 'Senior Engineer', 'Manager Kumar', 'sneha.reddy@intel.com', '+91-555-0018');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Thomas Mueller', 'Principal Engineer', 'Manager Schmidt', 'thomas.mueller@intel.com', '+49-555-0019');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jennifer Lee', 'Engineer Level 1', 'Manager Park', 'jennifer.lee@intel.com', '+82-555-0020');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Vikram Singh', 'Engineer Level 2', 'Manager Patel', 'vikram.singh@intel.com', '+91-555-0021');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Anna Kowalski', 'Staff Engineer', 'Manager Nowak', 'anna.kowalski@intel.com', '+48-555-0022');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Christopher Davis', 'Engineer Level 3', 'Manager Smith', 'christopher.davis@intel.com', '+1-555-0023');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Mei Lin', 'Senior Engineer', 'Manager Li', 'mei.lin@intel.com', '+86-555-0024');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ahmed Hassan', 'Principal Engineer', 'Manager Ali', 'ahmed.hassan@intel.com', '+20-555-0025');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jessica Martin', 'Engineer Level 1', 'Manager Rodriguez', 'jessica.martin@intel.com', '+1-555-0026');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ravi Krishnan', 'Engineer Level 2', 'Manager Kumar', 'ravi.krishnan@intel.com', '+91-555-0027');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sophie Dubois', 'Staff Engineer', 'Manager Leroy', 'sophie.dubois@intel.com', '+33-555-0028');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Daniel Johnson', 'Engineer Level 3', 'Manager Smith', 'daniel.johnson@intel.com', '+1-555-0029');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Kavita Desai', 'Senior Engineer', 'Manager Patel', 'kavita.desai@intel.com', '+91-555-0030');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Hans Weber', 'Principal Engineer', 'Manager Schmidt', 'hans.weber@intel.com', '+49-555-0031');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Emily White', 'Engineer Level 1', 'Manager Smith', 'emily.white@intel.com', '+1-555-0032');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Kenji Yamamoto', 'Engineer Level 2', 'Manager Suzuki', 'kenji.yamamoto@intel.com', '+81-555-0033');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Fatima Al-Said', 'Staff Engineer', 'Manager Ali', 'fatima.alsaid@intel.com', '+966-555-0034');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Mark Thompson', 'Engineer Level 3', 'Manager Smith', 'mark.thompson@intel.com', '+1-555-0035');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Pooja Mehta', 'Senior Engineer', 'Manager Kumar', 'pooja.mehta@intel.com', '+91-555-0036');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Lucas Silva', 'Principal Engineer', 'Manager Santos', 'lucas.silva@intel.com', '+55-555-0037');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Amanda Clark', 'Engineer Level 1', 'Manager Smith', 'amanda.clark@intel.com', '+1-555-0038');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Suresh Iyer', 'Engineer Level 2', 'Manager Patel', 'suresh.iyer@intel.com', '+91-555-0039');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Olga Smirnova', 'Staff Engineer', 'Manager Ivanov', 'olga.smirnova@intel.com', '+7-555-0040');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Kevin Moore', 'Engineer Level 3', 'Manager Smith', 'kevin.moore@intel.com', '+1-555-0041');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jing Wu', 'Senior Engineer', 'Manager Li', 'jing.wu@intel.com', '+86-555-0042');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Paolo Rossi', 'Principal Engineer', 'Manager Bianchi', 'paolo.rossi@intel.com', '+39-555-0043');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rachel Green', 'Engineer Level 1', 'Manager Smith', 'rachel.green@intel.com', '+1-555-0044');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Arjun Rao', 'Engineer Level 2', 'Manager Kumar', 'arjun.rao@intel.com', '+91-555-0045');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Min-Jun Park', 'Staff Engineer', 'Manager Park', 'minjun.park@intel.com', '+82-555-0046');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Stephanie Hall', 'Engineer Level 3', 'Manager Smith', 'stephanie.hall@intel.com', '+1-555-0047');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Neha Kapoor', 'Senior Engineer', 'Manager Patel', 'neha.kapoor@intel.com', '+91-555-0048');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Pierre Martin', 'Principal Engineer', 'Manager Leroy', 'pierre.martin@intel.com', '+33-555-0049');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Brian Harris', 'Engineer Level 1', 'Manager Smith', 'brian.harris@intel.com', '+1-555-0050');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Divya Menon', 'Engineer Level 2', 'Manager Kumar', 'divya.menon@intel.com', '+91-555-0051');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sakura Ito', 'Staff Engineer', 'Manager Suzuki', 'sakura.ito@intel.com', '+81-555-0052');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Andrew Wright', 'Engineer Level 3', 'Manager Smith', 'andrew.wright@intel.com', '+1-555-0053');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Amit Joshi', 'Senior Engineer', 'Manager Patel', 'amit.joshi@intel.com', '+91-555-0054');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Isabel Fernandez', 'Principal Engineer', 'Manager Rodriguez', 'isabel.fernandez@intel.com', '+34-555-0055');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Nathan Young', 'Engineer Level 1', 'Manager Smith', 'nathan.young@intel.com', '+1-555-0056');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rohit Agarwal', 'Engineer Level 2', 'Manager Kumar', 'rohit.agarwal@intel.com', '+91-555-0057');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Katarina Novak', 'Staff Engineer', 'Manager Horvat', 'katarina.novak@intel.com', '+385-555-0058');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Timothy Allen', 'Engineer Level 3', 'Manager Smith', 'timothy.allen@intel.com', '+1-555-0059');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Xiaoli Huang', 'Senior Engineer', 'Manager Li', 'xiaoli.huang@intel.com', '+86-555-0060');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sebastian Fischer', 'Principal Engineer', 'Manager Schmidt', 'sebastian.fischer@intel.com', '+49-555-0061');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Megan Scott', 'Engineer Level 1', 'Manager Smith', 'megan.scott@intel.com', '+1-555-0062');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sanjay Mishra', 'Engineer Level 2', 'Manager Patel', 'sanjay.mishra@intel.com', '+91-555-0063');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Hana Kim', 'Staff Engineer', 'Manager Park', 'hana.kim@intel.com', '+82-555-0064');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Gregory Adams', 'Engineer Level 3', 'Manager Smith', 'gregory.adams@intel.com', '+1-555-0065');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Lakshmi Raman', 'Senior Engineer', 'Manager Kumar', 'lakshmi.raman@intel.com', '+91-555-0066');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Oscar Eriksson', 'Principal Engineer', 'Manager Lindberg', 'oscar.eriksson@intel.com', '+46-555-0067');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Laura Mitchell', 'Engineer Level 1', 'Manager Smith', 'laura.mitchell@intel.com', '+1-555-0068');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Vinod Saxena', 'Engineer Level 2', 'Manager Patel', 'vinod.saxena@intel.com', '+91-555-0069');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Chloe Nguyen', 'Staff Engineer', 'Manager Tran', 'chloe.nguyen@intel.com', '+84-555-0070');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Patrick Campbell', 'Engineer Level 3', 'Manager Smith', 'patrick.campbell@intel.com', '+1-555-0071');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Meera Pillai', 'Senior Engineer', 'Manager Kumar', 'meera.pillai@intel.com', '+91-555-0072');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jan Kowalczyk', 'Principal Engineer', 'Manager Nowak', 'jan.kowalczyk@intel.com', '+48-555-0073');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Christina Roberts', 'Engineer Level 1', 'Manager Smith', 'christina.roberts@intel.com', '+1-555-0074');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rahul Banerjee', 'Engineer Level 2', 'Manager Kumar', 'rahul.banerjee@intel.com', '+91-555-0075');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ayumi Nakamura', 'Staff Engineer', 'Manager Suzuki', 'ayumi.nakamura@intel.com', '+81-555-0076');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Steven Carter', 'Engineer Level 3', 'Manager Smith', 'steven.carter@intel.com', '+1-555-0077');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Geeta Malhotra', 'Senior Engineer', 'Manager Patel', 'geeta.malhotra@intel.com', '+91-555-0078');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Mateo Gonzalez', 'Principal Engineer', 'Manager Rodriguez', 'mateo.gonzalez@intel.com', '+54-555-0079');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Kelly Phillips', 'Engineer Level 1', 'Manager Smith', 'kelly.phillips@intel.com', '+1-555-0080');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Naveen Bhat', 'Engineer Level 2', 'Manager Kumar', 'naveen.bhat@intel.com', '+91-555-0081');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Lena Johansson', 'Staff Engineer', 'Manager Lindberg', 'lena.johansson@intel.com', '+46-555-0082');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jeffrey Evans', 'Engineer Level 3', 'Manager Smith', 'jeffrey.evans@intel.com', '+1-555-0083');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sunita Chatterjee', 'Senior Engineer', 'Manager Patel', 'sunita.chatterjee@intel.com', '+91-555-0084');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Marco De Luca', 'Principal Engineer', 'Manager Bianchi', 'marco.deluca@intel.com', '+39-555-0085');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Heather Collins', 'Engineer Level 1', 'Manager Smith', 'heather.collins@intel.com', '+1-555-0086');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Karthik Srinivasan', 'Engineer Level 2', 'Manager Kumar', 'karthik.srinivasan@intel.com', '+91-555-0087');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Soo-Jin Lee', 'Staff Engineer', 'Manager Park', 'soojin.lee@intel.com', '+82-555-0088');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Dennis Ward', 'Engineer Level 3', 'Manager Smith', 'dennis.ward@intel.com', '+1-555-0089');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Asha Nambiar', 'Senior Engineer', 'Manager Kumar', 'asha.nambiar@intel.com', '+91-555-0090');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Erik Larsen', 'Principal Engineer', 'Manager Lindberg', 'erik.larsen@intel.com', '+47-555-0091');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Tiffany Baker', 'Engineer Level 1', 'Manager Smith', 'tiffany.baker@intel.com', '+1-555-0092');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Manoj Tiwari', 'Engineer Level 2', 'Manager Patel', 'manoj.tiwari@intel.com', '+91-555-0093');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Linh Pham', 'Staff Engineer', 'Manager Tran', 'linh.pham@intel.com', '+84-555-0094');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Jason Nelson', 'Engineer Level 3', 'Manager Smith', 'jason.nelson@intel.com', '+1-555-0095');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Pallavi Deshpande', 'Senior Engineer', 'Manager Kumar', 'pallavi.deshpande@intel.com', '+91-555-0096');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Felix Braun', 'Principal Engineer', 'Manager Schmidt', 'felix.braun@intel.com', '+49-555-0097');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Donna Hill', 'Engineer Level 1', 'Manager Smith', 'donna.hill@intel.com', '+1-555-0098');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Abhishek Pandey', 'Engineer Level 2', 'Manager Patel', 'abhishek.pandey@intel.com', '+91-555-0099');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Natsuki Mori', 'Staff Engineer', 'Manager Suzuki', 'natsuki.mori@intel.com', '+81-555-0100');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ryan Cooper', 'Engineer Level 3', 'Manager Smith', 'ryan.cooper@intel.com', '+1-555-0101');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Swati Kulkarni', 'Senior Engineer', 'Manager Kumar', 'swati.kulkarni@intel.com', '+91-555-0102');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Viktor Popov', 'Principal Engineer', 'Manager Ivanov', 'viktor.popov@intel.com', '+7-555-0103');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Michelle Morgan', 'Engineer Level 1', 'Manager Smith', 'michelle.morgan@intel.com', '+1-555-0104');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Gaurav Choudhary', 'Engineer Level 2', 'Manager Kumar', 'gaurav.choudhary@intel.com', '+91-555-0105');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Camille Laurent', 'Staff Engineer', 'Manager Leroy', 'camille.laurent@intel.com', '+33-555-0106');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Brandon Reed', 'Engineer Level 3', 'Manager Smith', 'brandon.reed@intel.com', '+1-555-0107');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Radha Subramanian', 'Senior Engineer', 'Manager Patel', 'radha.subramanian@intel.com', '+91-555-0108');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Hugo Fernandez', 'Principal Engineer', 'Manager Rodriguez', 'hugo.fernandez@intel.com', '+34-555-0109');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Samantha Ross', 'Engineer Level 1', 'Manager Smith', 'samantha.ross@intel.com', '+1-555-0110');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Prasad Hegde', 'Engineer Level 2', 'Manager Patel', 'prasad.hegde@intel.com', '+91-555-0111');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Hyun-Woo Choi', 'Staff Engineer', 'Manager Park', 'hyunwoo.choi@intel.com', '+82-555-0112');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Derek Wood', 'Engineer Level 3', 'Manager Smith', 'derek.wood@intel.com', '+1-555-0113');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Tanvi Sharma', 'Senior Engineer', 'Manager Kumar', 'tanvi.sharma@intel.com', '+91-555-0114');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Anders Nielsen', 'Principal Engineer', 'Manager Lindberg', 'anders.nielsen@intel.com', '+45-555-0115');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Nicole Price', 'Engineer Level 1', 'Manager Smith', 'nicole.price@intel.com', '+1-555-0116');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ishaan Dutta', 'Engineer Level 2', 'Manager Patel', 'ishaan.dutta@intel.com', '+91-555-0117');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Yara Al-Rashid', 'Staff Engineer', 'Manager Ali', 'yara.alrashid@intel.com', '+971-555-0118');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Philip Brooks', 'Engineer Level 3', 'Manager Smith', 'philip.brooks@intel.com', '+1-555-0119');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Preeti Bhatt', 'Senior Engineer', 'Manager Kumar', 'preeti.bhatt@intel.com', '+91-555-0120');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Tomasz Zielinski', 'Principal Engineer', 'Manager Nowak', 'tomasz.zielinski@intel.com', '+48-555-0121');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Christine Butler', 'Engineer Level 1', 'Manager Smith', 'christine.butler@intel.com', '+1-555-0122');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Harish Nanda', 'Engineer Level 2', 'Manager Kumar', 'harish.nanda@intel.com', '+91-555-0123');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rina Sato', 'Staff Engineer', 'Manager Suzuki', 'rina.sato@intel.com', '+81-555-0124');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Wayne Sanders', 'Engineer Level 3', 'Manager Smith', 'wayne.sanders@intel.com', '+1-555-0125');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Nidhi Raghavan', 'Senior Engineer', 'Manager Patel', 'nidhi.raghavan@intel.com', '+91-555-0126');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Lukas Hoffmann', 'Principal Engineer', 'Manager Schmidt', 'lukas.hoffmann@intel.com', '+49-555-0127');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Deborah Powell', 'Engineer Level 1', 'Manager Smith', 'deborah.powell@intel.com', '+1-555-0128');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ajay Thakur', 'Engineer Level 2', 'Manager Patel', 'ajay.thakur@intel.com', '+91-555-0129');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Binh Nguyen', 'Staff Engineer', 'Manager Tran', 'binh.nguyen@intel.com', '+84-555-0130');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Travis Long', 'Engineer Level 3', 'Manager Smith', 'travis.long@intel.com', '+1-555-0131');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Shalini Mohan', 'Senior Engineer', 'Manager Kumar', 'shalini.mohan@intel.com', '+91-555-0132');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Aleksander Krawczyk', 'Principal Engineer', 'Manager Nowak', 'aleksander.krawczyk@intel.com', '+48-555-0133');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Angela Foster', 'Engineer Level 1', 'Manager Smith', 'angela.foster@intel.com', '+1-555-0134');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Nitin Soni', 'Engineer Level 2', 'Manager Kumar', 'nitin.soni@intel.com', '+91-555-0135');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ji-Yeon Han', 'Staff Engineer', 'Manager Park', 'jiyeon.han@intel.com', '+82-555-0136');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Raymond Bell', 'Engineer Level 3', 'Manager Smith', 'raymond.bell@intel.com', '+1-555-0137');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Madhuri Patil', 'Senior Engineer', 'Manager Patel', 'madhuri.patil@intel.com', '+91-555-0138');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Emilio Herrera', 'Principal Engineer', 'Manager Rodriguez', 'emilio.herrera@intel.com', '+52-555-0139');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Diana Russell', 'Engineer Level 1', 'Manager Smith', 'diana.russell@intel.com', '+1-555-0140');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Varun Sethi', 'Engineer Level 2', 'Manager Patel', 'varun.sethi@intel.com', '+91-555-0141');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Ingrid Bergstrom', 'Staff Engineer', 'Manager Lindberg', 'ingrid.bergstrom@intel.com', '+46-555-0142');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Carl Henderson', 'Engineer Level 3', 'Manager Smith', 'carl.henderson@intel.com', '+1-555-0143');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Aparna Ghosh', 'Senior Engineer', 'Manager Kumar', 'aparna.ghosh@intel.com', '+91-555-0144');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Dmitri Volkov', 'Principal Engineer', 'Manager Ivanov', 'dmitri.volkov@intel.com', '+7-555-0145');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Brenda Coleman', 'Engineer Level 1', 'Manager Smith', 'brenda.coleman@intel.com', '+1-555-0146');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Sunil Yadav', 'Engineer Level 2', 'Manager Kumar', 'sunil.yadav@intel.com', '+91-555-0147');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Mariko Watanabe', 'Staff Engineer', 'Manager Suzuki', 'mariko.watanabe@intel.com', '+81-555-0148');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Alan Griffin', 'Engineer Level 3', 'Manager Smith', 'alan.griffin@intel.com', '+1-555-0149');
-INSERT INTO EMPLOYEE (full_name, role, manager, email, phone_number) VALUES ('Rekha Bose', 'Senior Engineer', 'Manager Patel', 'rekha.bose@intel.com', '+91-555-0150');
+-- Main employees for Case A
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440001', 'Eaton Zveare', 'Security Researcher', 'Jane Doe', 'eaton@intel.com', '+1-555-0000');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440002', 'Aditya Sharma', 'Engineer Level 1', 'Manager Patel', 'aditya.sharma@intel.com', '+91-555-0001');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440003', 'Priya Nair', 'Engineer Level 2', 'Manager Patel', 'priya.nair@intel.com', '+91-555-0002');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440004', 'James Wilson', 'Senior Engineer', 'Manager Smith', 'james.wilson@intel.com', '+1-555-0003');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440005', 'Sarah Chen', 'Staff Engineer', 'Manager Li', 'sarah.chen@intel.com', '+1-555-0004');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440006', 'Raj Patel', 'Principal Engineer', 'Manager Kumar', 'raj.patel@intel.com', '+91-555-0005');
+INSERT INTO EMPLOYEE (id, full_name, role, manager, email, phone_number) VALUES ('550e8400-e29b-11d4-a716-446655440007', 'Maria Garcia', 'Engineer Level 3', 'Manager Rodriguez', 'maria.garcia@intel.com', '+1-555-0006');
 
 -- =============================================================================
--- KASUS B: Product Hierarchy + Hardcoded Credentials
--- Simulates Intel's product management system and exposed admin credentials
+-- KASUS B: Product Hierarchy + Hardened Credentials
 -- =============================================================================
 
--- Product hierarchy (root categories)
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Processors', 'PROC-ROOT', 'Processors', 'Launched', NULL, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Chipsets', 'CHIP-ROOT', 'Chipsets', 'Launched', NULL, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel NUC', 'NUC-ROOT', 'NUC', 'Launched', NULL, 'admin');
+-- Product hierarchy
+INSERT INTO PRODUCT (id, product_name, product_code, category, status, parent_id, created_by) VALUES ('P-ROOT-100', 'Intel Processors', 'PROC-ROOT', 'Processors', 'Launched', NULL, 'admin');
+INSERT INTO PRODUCT (id, product_name, product_code, category, status, parent_id, created_by) VALUES ('P-ROOT-200', 'Intel Chipsets', 'CHIP-ROOT', 'Chipsets', 'Launched', NULL, 'admin');
+INSERT INTO PRODUCT (id, product_name, product_code, category, status, parent_id, created_by) VALUES ('P-CHILD-101', 'Core i9-14900K', 'PROC-14900K', 'Processors', 'Launched', 'P-ROOT-100', 'admin');
 
--- Child products (under Processors, id=1)
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core i9-14900K', 'PROC-14900K', 'Processors', 'Launched', 1, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core i7-14700K', 'PROC-14700K', 'Processors', 'Launched', 1, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Core Ultra 200S', 'PROC-ULTRA200', 'Processors', 'Announced', 1, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Xeon w9-3595X', 'XEON-3595X', 'Processors', 'Launched', 1, 'admin');
-
--- Child products (under Chipsets, id=2)
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel Z790', 'CHIP-Z790', 'Chipsets', 'Launched', 2, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel B760', 'CHIP-B760', 'Chipsets', 'Launched', 2, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('Intel W790', 'CHIP-W790', 'Chipsets', 'Launched', 2, 'admin');
-
--- Child products (under NUC, id=3)
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('NUC 13 Pro', 'NUC-13PRO', 'NUC', 'Launched', 3, 'admin');
-INSERT INTO PRODUCT (product_name, product_code, category, status, parent_id, created_by) VALUES ('NUC 14 Performance', 'NUC-14PERF', 'NUC', 'Announced', 3, 'admin');
-
--- VULNERABILITY: Hardcoded admin credentials (in real breach, these were in JS source code)
-INSERT INTO ADMIN_CREDENTIAL (username, password, role, github_token, basic_auth) VALUES ('product-admin', 'IntelP@ssw0rd2024!', 'SPARK Product Management System Admin', 'ghp_1a2b3c4d5e6f7g8h9i0jklmnopqrstuv', 'Basic cHJvZHVjdC1hZG1pbjpJbnRlbFBAc3N3MHJkMjAyNCE=');
-INSERT INTO ADMIN_CREDENTIAL (username, password, role, github_token, basic_auth) VALUES ('hierarchy-viewer', 'ViewerPass123', 'viewer', NULL, 'Basic aGllcmFyY2h5LXZpZXdlcjpWaWV3ZXJQYXNzMTIz');
+-- ADMIN_CREDENTIAL (Deep Model: BCrypt)
+-- admin: password123
+INSERT INTO ADMIN_CREDENTIAL (id, username, password, role, github_token, basic_auth) VALUES ('U-ADMIN-001', 'admin', '$2a$10$LKpcehXbRdSWRhnTMhkjY./cVoYGlPQkm9Zu/E7Bz3zHjqmOMig/m', 'ADMIN', '[MASKED]', '[MASKED]');
+-- product-admin: IntelP@ssw0rd2024!
+INSERT INTO ADMIN_CREDENTIAL (id, username, password, role, github_token, basic_auth) VALUES ('U-ADMIN-002', 'product-admin', '$2a$10$AJXoROEkKXI8cBaAlRevCudcZdHcS00pos689.FKW6DHzmp.LdQv6', 'ADMIN', '[MASKED]', '[MASKED]');
+-- employee-admin: emp123
+INSERT INTO ADMIN_CREDENTIAL (id, username, password, role, github_token, basic_auth) VALUES ('U-ADMIN-003', 'employee-admin', '$2a$10$MJS0RFsVbqIImZlMwlix/eEfFv1BOgO7OiJaMf69cowN/7wSExJHO', 'ADMIN', '[MASKED]', '[MASKED]');
+-- seims-admin: seims123
+INSERT INTO ADMIN_CREDENTIAL (id, username, password, role, github_token, basic_auth) VALUES ('U-ADMIN-004', 'seims-admin', '$2a$10$uOgBLHiJPlpRvqRj9lTNyek3rhoUMa4X7w/sFnQsE53yQ7KQVZmJC', 'ADMIN', '[MASKED]', '[MASKED]');
 
 -- =============================================================================
--- KASUS C: SEIMS — Suppliers, NDAs, and Sessions
--- Simulates supplier EHS IP management system with sequential IDs and broken JWT
+-- KASUS C: SEIMS — Suppliers & NDAs
 -- =============================================================================
 
--- Supplier data (sequential IDs — vulnerable to enumeration)
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Taiwan Semiconductor Manufacturing', 'Wei-Lin Chang', 'wchang@tsmc.com', '+886-3-5636688', 'Taiwan', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Samsung Electronics', 'Min-Soo Park', 'mspark@samsung.com', '+82-2-2255-0114', 'South Korea', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('SK Hynix', 'Ji-Hoon Lee', 'jhlee@skhynix.com', '+82-2-3459-2114', 'South Korea', 'Pending');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Micron Technology', 'Robert Ellison', 'rellison@micron.com', '+1-208-368-4000', 'USA', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('ASE Group', 'Hsiao-Wen Liu', 'hwliu@aseglobal.com', '+886-2-8780-5489', 'Taiwan', 'Non-Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('GlobalFoundries', 'Ahmed Nassar', 'anassar@gf.com', '+1-518-305-7200', 'USA', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Infineon Technologies', 'Klaus Wagner', 'kwagner@infineon.com', '+49-89-234-0', 'Germany', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Nanya Technology', 'Yi-Chen Wu', 'ycwu@nanya.com', '+886-3-328-1688', 'Taiwan', 'Pending');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('United Microelectronics Corp', 'Cheng-Yu Tan', 'cytan@umc.com', '+886-3-578-2258', 'Taiwan', 'Compliant');
-INSERT INTO SUPPLIER (company_name, contact_person, email, phone, country, ehs_status) VALUES ('Amkor Technology', 'Sujit Banerjee', 'sbanerjee@amkor.com', '+1-480-821-5000', 'USA', 'Compliant');
+INSERT INTO SUPPLIER (id, company_name, contact_person, email, phone, country, ehs_status) VALUES ('550e8400-e29b-41d4-a716-446655440000', 'Taiwan Semiconductor Manufacturing', 'Wei-Lin Chang', 'wchang@tsmc.com', '+886-3-5636688', 'Taiwan', 'Compliant');
+INSERT INTO SUPPLIER (id, company_name, contact_person, email, phone, country, ehs_status) VALUES ('661f9511-f30c-52e5-b827-557766551111', 'Samsung Electronics', 'Min-Soo Park', 'mspark@samsung.com', '+82-2-2255-0114', 'South Korea', 'Compliant');
 
--- Confidential NDAs (sensitive documents exposed in the real breach)
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (1, 'TSMC 3nm Process Node IP Agreement', '2023-01-15', '2028-01-15', 'Top Secret', '/docs/nda/tsmc-3nm-ip-2023.pdf');
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (1, 'TSMC CoWoS Packaging Agreement', '2023-06-01', '2026-06-01', 'Confidential', '/docs/nda/tsmc-cowos-2023.pdf');
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (2, 'Samsung HBM4 Supply Agreement', '2024-03-10', '2027-03-10', 'Top Secret', '/docs/nda/samsung-hbm4-2024.pdf');
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (3, 'SK Hynix DDR6 Development Partnership', '2024-01-20', '2029-01-20', 'Confidential', '/docs/nda/skhynix-ddr6-2024.pdf');
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (4, 'Micron CXL Memory Module Agreement', '2023-09-05', '2026-09-05', 'Confidential', '/docs/nda/micron-cxl-2023.pdf');
-INSERT INTO SUPPLIER_NDA (supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES (7, 'Infineon Power IC Specifications', '2024-02-14', '2027-02-14', 'Top Secret', '/docs/nda/infineon-power-2024.pdf');
+-- NDAs
+INSERT INTO SUPPLIER_NDA (id, supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES ('NDA-UUID-100', '550e8400-e29b-41d4-a716-446655440000', 'TSMC 3nm Process Node IP Agreement', '2023-01-15', '2028-01-15', 'Top Secret', '/docs/nda/tsmc-3nm-ip-2023.pdf');
+INSERT INTO SUPPLIER_NDA (id, supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES ('NDA-UUID-101', '550e8400-e29b-41d4-a716-446655440000', 'TSMC CoWoS Packaging Agreement', '2023-06-01', '2026-06-01', 'Confidential', '/docs/nda/tsmc-cowos-2023.pdf');
+INSERT INTO SUPPLIER_NDA (id, supplier_id, nda_title, signed_date, expiry_date, classification, document_url) VALUES ('NDA-UUID-200', '661f9511-f30c-52e5-b827-557766551111', 'Samsung HBM4 Supply Agreement', '2024-03-10', '2027-03-10', 'Top Secret', '/docs/nda/samsung-hbm4-2024.pdf');
 
--- Session data (SHALLOW: no binding between token and user, no JWT validation)
-INSERT INTO USER_SESSION (user_id, token, ip_address, created_at, expires_at) VALUES ('user001', 'Not Autorized', '192.168.1.100', '2025-01-01 08:00:00', '2025-01-01 20:00:00');
-INSERT INTO USER_SESSION (user_id, token, ip_address, created_at, expires_at) VALUES ('user002', 'eyJhbGciOiJub25lIn0.eyJ1c2VyIjoiZmFrZSJ9.', '10.0.0.50', '2025-01-01 09:00:00', '2025-01-01 21:00:00');
+-- Sessions
+INSERT INTO USER_SESSION (id, user_id, token, ip_address, created_at, expires_at) VALUES ('SESS-001', 'user001', 'SESSION_TOKEN_1', '192.168.1.100', '2025-01-01 08:00:00', '2025-01-01 20:00:00');

@@ -1,9 +1,8 @@
 -- =============================================================================
 -- KASUS A: Business Card Portal
--- Simulates Intel's global employee directory (270,000 records in real breach)
 -- =============================================================================
 CREATE TABLE IF NOT EXISTS EMPLOYEE (
-    id           BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id           VARCHAR(255) PRIMARY KEY,
     full_name    VARCHAR(255),
     role         VARCHAR(255),
     manager      VARCHAR(255),
@@ -13,25 +12,23 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE (
 
 -- =============================================================================
 -- KASUS B: Product Hierarchy System
--- Simulates Intel's product hierarchy management + hardcoded admin credentials
 -- =============================================================================
 
--- Tabel produk: hierarki produk Intel (ARK database)
+-- Tabel produk
 CREATE TABLE IF NOT EXISTS PRODUCT (
-    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id              VARCHAR(255) PRIMARY KEY,
     product_name    VARCHAR(255),
     product_code    VARCHAR(100),
     category        VARCHAR(100),
     status          VARCHAR(50),
-    parent_id       BIGINT,
+    parent_id       VARCHAR(255),
     created_by      VARCHAR(100),
     FOREIGN KEY (parent_id) REFERENCES PRODUCT(id)
 );
 
--- Tabel kredensial admin: SENGAJA INSECURE (Shallow Model)
--- Dalam sistem asli, credentials hardcoded di JavaScript klien
+-- Tabel kredensial admin
 CREATE TABLE IF NOT EXISTS ADMIN_CREDENTIAL (
-    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id              VARCHAR(255) PRIMARY KEY,
     username        VARCHAR(100),
     password        VARCHAR(255),
     role            VARCHAR(100),
@@ -41,12 +38,11 @@ CREATE TABLE IF NOT EXISTS ADMIN_CREDENTIAL (
 
 -- =============================================================================
 -- KASUS C: SEIMS (Supplier EHS IP Management System)
--- Simulates supplier data, NDAs, and session management
 -- =============================================================================
 
--- Tabel supplier: data pemasok Intel
+-- Tabel supplier
 CREATE TABLE IF NOT EXISTS SUPPLIER (
-    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id              VARCHAR(255) PRIMARY KEY,
     company_name    VARCHAR(255),
     contact_person  VARCHAR(255),
     email           VARCHAR(255),
@@ -55,10 +51,10 @@ CREATE TABLE IF NOT EXISTS SUPPLIER (
     ehs_status      VARCHAR(50)
 );
 
--- Tabel NDA: Non-Disclosure Agreements (data sangat sensitif)
+-- Tabel NDA
 CREATE TABLE IF NOT EXISTS SUPPLIER_NDA (
-    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
-    supplier_id     BIGINT,
+    id              VARCHAR(255) PRIMARY KEY,
+    supplier_id     VARCHAR(255),
     nda_title       VARCHAR(255),
     signed_date     DATE,
     expiry_date     DATE,
@@ -67,9 +63,9 @@ CREATE TABLE IF NOT EXISTS SUPPLIER_NDA (
     FOREIGN KEY (supplier_id) REFERENCES SUPPLIER(id)
 );
 
--- Tabel sesi: user session management (SHALLOW: no binding)
+-- Tabel sesi
 CREATE TABLE IF NOT EXISTS USER_SESSION (
-    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id              VARCHAR(255) PRIMARY KEY,
     user_id         VARCHAR(100),
     token           VARCHAR(500),
     ip_address      VARCHAR(50),

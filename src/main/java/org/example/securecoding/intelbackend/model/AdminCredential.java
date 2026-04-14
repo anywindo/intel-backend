@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.securecoding.intelbackend.domain.PasswordHash;
 
 /**
  * JPA Entity representing hardcoded admin credentials.
@@ -25,26 +27,53 @@ import lombok.NoArgsConstructor;
  * - Basic Auth header stored in plaintext
  */
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AdminCredential {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private String username;
 
-    // VULNERABILITY: Password stored in plaintext — not hashed
-    private String password;
+    // DEEP MODEL: PasswordHash encapsulates the BCrypt hash logic
+    private PasswordHash password;
 
-    // VULNERABILITY: Role as primitive String — attacker can spoof "admin"
     private String role;
 
-    // VULNERABILITY: GitHub personal access token exposed in source code
+    // Simulation fields for Case B — always masked in Deep Model API responses
     private String githubToken;
-
-    // VULNERABILITY: Plaintext Basic Auth header
     private String basicAuth;
+
+    public AdminCredential(String id, String username, PasswordHash password, String role, String githubToken, String basicAuth) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("Credential ID cannot be empty");
+        }
+        if (username == null || username.trim().isEmpty()) {
+            throw new IllegalArgumentException("Username cannot be empty (Deep Model Violation)");
+        }
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.githubToken = githubToken;
+        this.basicAuth = basicAuth;
+    }
+
+    /**
+     * === KODE RENTAN (SHALLOW MODEL) — Dipertahankan untuk Komparatif ===
+     *
+     * @Entity
+     * @Data
+     * @NoArgsConstructor
+     * @AllArgsConstructor
+     * public class AdminCredential {
+     *     private Long id;
+     *     private String username;
+     *     private String password;    // Primitive Obsession: Password tersimpan dalam plaintext
+     *     private String role;
+     *     private String githubToken; // VULNERABILITY: Rahasia pihak ketiga terekspos
+     *     private String basicAuth;   // VULNERABILITY: Header otentikasi terekspos
+     * }
+     */
 }

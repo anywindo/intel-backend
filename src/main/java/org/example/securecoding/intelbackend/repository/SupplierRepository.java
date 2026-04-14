@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SupplierRepository extends JpaRepository<Supplier, Long> {
+public interface SupplierRepository extends JpaRepository<Supplier, String> {
 
     // Search suppliers by company name
     List<Supplier> findByCompanyNameContainingIgnoreCase(String name);

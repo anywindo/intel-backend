@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
     // Custom query to find a specific employee by name (for normal, safe operation)
     List<Employee> findByFullNameContainingIgnoreCase(String name);

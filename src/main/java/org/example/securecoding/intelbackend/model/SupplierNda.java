@@ -6,8 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -26,14 +27,12 @@ import java.time.LocalDate;
  * document URLs — all accessible without authentication in the Shallow Model.
  */
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class SupplierNda {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "supplier_id")
@@ -48,4 +47,39 @@ public class SupplierNda {
 
     // Direct URL to the NDA document — exposed without auth in Shallow Model
     private String documentUrl;
+
+    public SupplierNda(String id, Supplier supplier, String ndaTitle, LocalDate signedDate, LocalDate expiryDate, String classification, String documentUrl) {
+        if (ndaTitle == null || ndaTitle.trim().isEmpty()) {
+            throw new IllegalArgumentException("NDA title cannot be empty (Deep Model Violation)");
+        }
+        this.id = id;
+        this.supplier = supplier;
+        this.ndaTitle = ndaTitle;
+        this.signedDate = signedDate;
+        this.expiryDate = expiryDate;
+        this.classification = classification;
+        this.documentUrl = documentUrl;
+    }
+
+    /**
+     * === KODE RENTAN (SHALLOW MODEL) — Dipertahankan untuk Komparatif ===
+     *
+     * @Entity
+     * @Data
+     * @NoArgsConstructor
+     * @AllArgsConstructor
+     * public class SupplierNda {
+     *     @Id
+     *     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     *     private Long id;
+     *     @ManyToOne
+     *     @JoinColumn(name = "supplier_id")
+     *     private Supplier supplier;
+     *     private String ndaTitle;
+     *     private LocalDate signedDate;
+     *     private LocalDate expiryDate;
+     *     private String classification;
+     *     private String documentUrl;
+     * }
+     */
 }

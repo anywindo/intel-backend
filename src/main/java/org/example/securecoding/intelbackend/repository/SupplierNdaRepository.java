@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SupplierNdaRepository extends JpaRepository<SupplierNda, Long> {
+public interface SupplierNdaRepository extends JpaRepository<SupplierNda, String> {
 
     // Find all NDAs for a specific supplier
-    List<SupplierNda> findBySupplierId(Long supplierId);
+    List<SupplierNda> findBySupplierId(String supplierId);
 }
