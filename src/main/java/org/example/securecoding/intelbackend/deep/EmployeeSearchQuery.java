@@ -11,7 +11,7 @@ package org.example.securecoding.intelbackend.deep;
  */
 public class EmployeeSearchQuery {
 
-    private static final int MINIMUM_QUERY_LENGTH = 3;
+    private static final int MINIMUM_QUERY_LENGTH = 2;
     private final String value;
 
     // Constructor langsung validasi — tidak bisa bypass dari luar
